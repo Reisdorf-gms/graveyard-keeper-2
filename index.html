@@ -436,7 +436,8 @@ footer{border-top:1px solid var(--line);margin-top:28px;padding-top:18px;color:v
 <div class="skill-actions">
 <button id="help" class="save-icon help-icon" type="button" aria-label="Ajuda e como usar" title="Ajuda e como usar">?</button>
 <button id="reset-all" class="save-icon reset-all-icon" type="button" aria-label="Reiniciar todas as árvores" title="Reiniciar todas as árvores"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M26 11A12 12 0 1 0 28 19" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><path d="M26 4v8h-8" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button id="html" class="save-icon" type="button" aria-label="Salvar planejador completo" title="Salvar planejador completo (baixar HTML)"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 3h19l5 5v21H3V3h2Z" fill="#a47d3f" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path><path d="M9 3h15v10H9z" fill="#211c15" stroke="currentColor" stroke-width="1.4"></path><path d="M19 5h3v6h-3z" fill="currentColor"></path><path d="M8 18h16v11H8z" fill="#30271c" stroke="currentColor" stroke-width="1.4"></path><path d="M12 22h8m-8 3h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg></button>
+<button id="import" class="save-icon" type="button" aria-label="Restaurar progresso (JSON)" title="Restaurar progresso (JSON)"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M3 8h10l3 4h13v15H3z" fill="#a47d3f" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 16h26l-3 11H3z" fill="#30271c" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 17v8m-4-4 4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<button id="export" class="save-icon" type="button" aria-label="Salvar progresso (JSON)" title="Salvar progresso (JSON)"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 3h19l5 5v21H3V3h2Z" fill="#a47d3f" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path><path d="M9 3h15v10H9z" fill="#211c15" stroke="currentColor" stroke-width="1.4"></path><path d="M19 5h3v6h-3z" fill="currentColor"></path><path d="M8 18h16v11H8z" fill="#30271c" stroke="currentColor" stroke-width="1.4"></path><path d="M12 22h8m-8 3h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg></button>
 </div>
 </div>
 <div class="views">
@@ -485,8 +486,7 @@ footer{border-top:1px solid var(--line);margin-top:28px;padding-top:18px;color:v
 <span id="fan-credit">Ferramenta de fã, não oficial. Criado para ajudar no planejamento das habilidades de Graveyard Keeper 2.</span><br>
 <p id="planner-summary">Explore 90 habilidades das cinco árvores, crie sua Tier List e planeje sua progressão. Ferramenta gratuita em português e inglês para jogadores de PC e console, sem mods. Acesse pelo navegador do computador, tablet ou celular.</p>
 <span class="wiki-credit"><span id="wiki-label">Referência de nomenclatura:</span> <a href="https://wikily.gg/graveyard-keeper-2/perk-tree" target="_blank" rel="noopener noreferrer">Wikily — Graveyard Keeper 2</a>.</span>
-<span id="storage-state" class="storage-state" role="status">As alterações são salvas neste navegador quando disponível. Use o disquete para guardar uma cópia do HTML.</span>
-<div class="backup-actions"><button id="export" type="button">Baixar backup (JSON)</button><button id="import" type="button">Restaurar backup</button></div>
+<span id="storage-state" class="storage-state" role="status">As alterações são salvas neste navegador quando disponível. Use o disquete para salvar o progresso em JSON e a pasta para restaurá-lo.</span>
 </footer>
 </main>
 <button id="mobile-top" class="mobile-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo" hidden>↑</button>
@@ -498,7 +498,7 @@ footer{border-top:1px solid var(--line);margin-top:28px;padding-top:18px;color:v
 <h3>Classificação e notas</h3>
 <p>Escolha de S (maior prioridade) a D (menor prioridade), ou — para deixar sem classificação. Você pode alterar a classificação e escrever suas notas tanto na árvore quanto na Tier List. As duas telas permanecem sincronizadas.</p>
 <h3>Salvar e restaurar</h3>
-<p>As alterações são salvas automaticamente no navegador, quando disponível. O disquete baixa uma cópia do HTML completo. No rodapé, você pode baixar um backup JSON ou restaurar um backup anterior. Os dados são locais, sem conta e sem sincronização entre dispositivos.</p>
+<p>As alterações são salvas automaticamente no navegador, quando disponível. Use o disquete para baixar seu progresso em JSON e a pasta ao lado para restaurá-lo. Continue utilizando o planejador pelo GitHub Pages. Os dados são locais, sem conta e sem sincronização automática entre dispositivos.</p>
 <h3>Reiniciar</h3>
 <p>A seta circular reinicia as cinco árvores; o botão Reiniciar posições afeta somente a categoria atual. Ambas as ações pedem confirmação e preservam as notas.</p>
 <h3>Acesso no celular</h3>
@@ -715,7 +715,7 @@ function localizeStatic(){
  document.querySelector("h1").innerHTML=tr('Sua árvore.<br><span>Seu ponto de partida.</span>','Your tree.<br><span>Your starting point.</span>');
  set("#text","Exportar texto","Export text");set("#print","Salvar PDF","Save PDF");set("#tree-view","Árvore de Habilidades","Talent Tree");set("#tier-view","Tier List","Tier List");
  attr("#skills","aria-label","Escolher habilidade","Choose talent tree");
- for(const [id,pt,en] of [["help","Ajuda e como usar","Help and instructions"],["reset-all","Reiniciar todas as árvores","Reset all trees"],["html","Salvar planejador completo","Save complete planner"],["mobile-top","Voltar ao topo","Back to top"]]){attr("#"+id,"aria-label",pt,en);attr("#"+id,"title",id==="html"?pt+" (baixar HTML)":pt,id==="html"?en+" (download HTML)":en)}
+ for(const [id,pt,en] of [["help","Ajuda e como usar","Help and instructions"],["reset-all","Reiniciar todas as árvores","Reset all trees"],["import","Restaurar progresso (JSON)","Restore progress (JSON)"],["export","Salvar progresso (JSON)","Save progress (JSON)"],["mobile-top","Voltar ao topo","Back to top"]]){attr("#"+id,"aria-label",pt,en);attr("#"+id,"title",pt,en)}
  set("#empty > p","Esta habilidade aguarda suas referências. Os dados das demais habilidades permanecem separados e disponíveis.","This tree is awaiting reference data. The other trees remain separate and available.");
  set("p.tree-instructions","Passe o mouse para ver o cartão e escolher S, A, B, C ou D. Clique no nó para fixar a prévia e marcar seus requisitos. No celular, toque no nó. O botão ⛶ recentraliza somente quando você solicitar.","Hover to view a card and select S, A, B, C or D. Click a node to pin its preview and select its prerequisites. On mobile, tap the node. Use ⛶ to recenter.");
  set("#clear","Limpar seleção de requisitos","Clear prerequisite selection");attr("#plus","aria-label","Aproximar","Zoom in");attr("#minus","aria-label","Afastar","Zoom out");attr("#fit","aria-label","Recentralizar esta árvore","Recenter this tree");
@@ -726,12 +726,11 @@ function localizeStatic(){
  set("#before","← Antes","← Earlier");set("#after","Depois →","Later →");set(".pool-title h2","Não classificados","Unranked");set("#reset","Reiniciar posições","Reset rankings");
  set("footer > strong","Planejador da Árvore de Talentos · v1.1 · Reisdorf","Talent Tree Planner · v1.1 · Reisdorf");set(".game-version","Graveyard Keeper 2 · versão 1.012","Graveyard Keeper 2 · version 1.012");
  set("#fan-credit","Ferramenta de fã, não oficial. Criado para ajudar no planejamento das habilidades de Graveyard Keeper 2.","An unofficial fan-made tool for planning talents in Graveyard Keeper 2.");set("#wiki-label","Referência de nomenclatura:","Terminology reference:");
- set("#export","Baixar backup (JSON)","Download backup (JSON)");set("#import","Restaurar backup","Restore backup");
  set("#help-title","Como usar o planejador","How to use the planner");set("#help-dialog .dialog-top button","Fechar ×","Close ×");attr("#help-dialog .dialog-top button","aria-label","Fechar ajuda","Close help");
  const helpParas=[
  ["Planejador v1.1 · Graveyard Keeper 2 v1.012. Escolha uma das cinco árvores e monte sua própria estratégia.","Planner v1.1 · Graveyard Keeper 2 v1.012. Choose one of the five trees and plan your own strategy."],
  ["Escolha de S (maior prioridade) a D (menor prioridade), ou — para deixar sem classificação. Você pode alterar a classificação e escrever suas notas tanto na árvore quanto na Tier List. As duas telas permanecem sincronizadas.","Choose S (highest priority) through D (lowest priority), or — to leave a skill unranked. Change rankings and write notes in either the tree or the Tier List; both views stay synchronized."],
- ["As alterações são salvas automaticamente no navegador, quando disponível. O disquete baixa uma cópia do HTML completo. No rodapé, você pode baixar um backup JSON ou restaurar um backup anterior. Os dados são locais, sem conta e sem sincronização entre dispositivos.","Changes are saved automatically in your browser when available. The disk icon downloads a complete HTML copy. Use the footer to download or restore a JSON backup. Data stays local; no account or cross-device sync is required."],
+ ["As alterações são salvas automaticamente no navegador, quando disponível. Use o disquete para baixar seu progresso em JSON e a pasta ao lado para restaurá-lo. Continue utilizando o planejador pelo GitHub Pages. Os dados são locais, sem conta e sem sincronização automática entre dispositivos.","Changes are saved automatically in your browser when available. Use the disk icon to download your progress as JSON and the adjacent folder to restore it. Continue using the planner through GitHub Pages. Data stays local; there is no account or automatic cross-device sync."],
  ["A seta circular reinicia as cinco árvores; o botão Reiniciar posições afeta somente a categoria atual. Ambas as ações pedem confirmação e preservam as notas.","The circular-arrow button resets all five trees; Reset rankings affects only the current tree. Both actions require confirmation and preserve notes."],
  ["Se estiver usando a versão online, abra-a no navegador e utilize a opção de adicionar à tela inicial, caso disponível. No iPhone ou iPad, use o Safari e o menu Compartilhar.","For the online version, open it in your browser and use Add to Home Screen if available. On iPhone or iPad, use Safari's Share menu."]];
  document.querySelectorAll("#help-dialog > p").forEach((p,i)=>{if(helpParas[i])p.textContent=tr(...helpParas[i])});
@@ -774,7 +773,7 @@ next.unlocked=[...set];return next;
 }
 function snapshotData(){return {version:2,type:"gk2-five-skills",workspaceId,language,active,view,skills:work}}
 function compactSnapshot(){return {...snapshotData(),skills:Object.fromEntries(keys.map(k=>{const {notes,positions,unlocked,camera}=work[k];return [k,{notes,positions,unlocked,camera}]}))}}
-function storageStatus(ok){const el=$("storage-state");el.dataset.error=String(!ok);el.textContent=ok?tr("Salvamento automático neste navegador. Use o disquete para baixar uma cópia.","Automatically saved in this browser. Use the disk icon to download a copy."):tr("Salvamento automático indisponível. Use o disquete ou baixe um backup para manter suas alterações.","Automatic saving is unavailable. Use the disk icon or download a backup to keep your changes.")}
+function storageStatus(ok){const el=$("storage-state");el.dataset.error=String(!ok);el.textContent=ok?tr("Salvamento automático neste navegador. Use o disquete para salvar o progresso em JSON e a pasta para restaurá-lo.","Automatically saved in this browser. Use the disk icon to save progress as JSON and the folder to restore it."):tr("Salvamento automático indisponível. Use o disquete para salvar seu progresso em JSON.","Automatic saving is unavailable. Use the disk icon to save your progress as JSON.")}
 function save(){
 clearTimeout(saveTimer);
 try{localStorage.setItem(storeKey,JSON.stringify(compactSnapshot()));storageStatus(true)}
@@ -1202,18 +1201,6 @@ const url=URL.createObjectURL(new Blob([content],{type}));const a=document.creat
 }
 $("export").onclick=()=>{
 rememberCamera();download(JSON.stringify(compactSnapshot(),null,2),"Reisdorf-Backup.json","application/json");save();message(tr("Backup preparado para download.","Backup ready to download."));
-};
-$("html").onclick=()=>{
-rememberCamera();
-const clone=document.documentElement.cloneNode(true);
-const copyId="copy-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10);
-clone.querySelector("#embedded").textContent=JSON.stringify({...snapshotData(),workspaceId:copyId}).replace(/</g,"\\u003c");
-["#skills","#world","#board","#preview","#level-labels"].forEach(sel=>clone.querySelector(sel).replaceChildren());
-clone.querySelector(".pool").replaceChildren();clone.querySelector("#preview").hidden=true;clone.querySelector("#status").textContent="";
-clone.querySelector("#confirm-dialog").removeAttribute("open");clone.querySelector("#help-dialog").removeAttribute("open");clone.querySelector("#mobile-top").hidden=true;
-clone.querySelectorAll("[data-pwa]").forEach(el=>el.remove());
-download("<!DOCTYPE html>\n"+clone.outerHTML,"Graveyard-Keeper-2-Reisdorf-Bilingual.html","text/html;charset=utf-8");
-save();message(tr("Cópia do HTML preparada para download. Confira a pasta de downloads do navegador.","HTML copy ready to download. Check your browser's downloads folder."));
 };
 function applyAll(s){
 keys.forEach(k=>{if(s.skills?.[k])work[k]=normalize(k,s.skills[k])});

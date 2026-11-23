@@ -1,4 +1,4 @@
-const CACHE = 'reisdorf-planner-shell-v1-1-public-seo';
+const CACHE = 'reisdorf-planner-shell-v1-1-public-json-backup';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)));

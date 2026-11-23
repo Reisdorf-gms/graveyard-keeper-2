@@ -26,7 +26,7 @@ This independent browser-based companion is designed for **PC and console player
 - Rank talents from S to D or leave them unranked, with the tree and tier list synchronized.
 - Add personal notes, zoom and navigate freely using a mouse or touchscreen.
 - Switch between English and Brazilian Portuguese without losing your rankings.
-- Save changes locally when supported by your browser, download the complete HTML planner, and export or restore a JSON backup.
+- Save changes locally when supported by your browser, and export or restore a JSON progress backup.
 - Use the online version as a progressive web app (PWA) on compatible browsers, with offline support after the first successful load.
 
 ### Getting started
@@ -34,7 +34,7 @@ This independent browser-based companion is designed for **PC and console player
 1. [Open the planner](https://reisdorf-gms.github.io/graveyard-keeper-2/).
 2. Choose a language and a talent tree, then explore the perks.
 3. Assign rankings using the skill cards or the tier list. Add notes if you wish.
-4. Use the disk icon to download a portable copy. The reset button requires confirmation and preserves notes.
+4. Use the disk icon to download your progress as JSON, or the folder icon to restore it. The reset button requires confirmation and preserves notes. The planner itself is available through GitHub Pages.
 
 The public edition starts with unranked talents, so you can build your own strategy. Rankings are personal, not a prescribed way to play. No account is required by the planner.
 
@@ -50,7 +50,7 @@ A ferramenta é independente do jogo e atende jogadores de **PC e console**. É 
 - Classifique as habilidades de S a D, ou deixe-as sem classificação, com a árvore e a Tier List sincronizadas.
 - Adicione notas, navegue com o mouse ou toque e use o zoom.
 - Alterne entre português e inglês sem perder suas classificações.
-- Salve as alterações no navegador, quando disponível, baixe o HTML completo e exporte ou restaure backups JSON.
+- Salve as alterações no navegador, quando disponível, e exporte ou restaure seu progresso em JSON.
 - Utilize a versão online como PWA em navegadores compatíveis, inclusive offline após o primeiro carregamento bem-sucedido.
 
 ### Como usar
@@ -58,7 +58,7 @@ A ferramenta é independente do jogo e atende jogadores de **PC e console**. É 
 1. [Acesse o planejador](https://reisdorf-gms.github.io/graveyard-keeper-2/).
 2. Escolha o idioma e uma árvore de talentos.
 3. Classifique as habilidades e anote suas prioridades.
-4. Utilize o disquete para baixar sua cópia. A opção de reiniciar solicita confirmação e preserva as notas.
+4. Utilize o disquete para baixar seu progresso em JSON ou a pasta para restaurá-lo. A opção de reiniciar solicita confirmação e preserva as notas. O planejador é acessado pelo GitHub Pages.
 
 A edição pública começa sem classificações para que cada jogador possa construir sua própria estratégia. Não existe uma única maneira certa de jogar.
 
