@@ -2,12 +2,19 @@
 <html lang="pt-BR"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Graveyard Keeper 2 — Planejador de Talentos | Reisdorf</title>
+<title>Graveyard Keeper 2 — Planejador de Talentos e Tier List | Reisdorf</title>
 <meta name="theme-color" content="#171813">
 <link rel="manifest" href="./manifest.webmanifest" data-pwa>
 <link rel="apple-touch-icon" href="./icon-192.png" data-pwa>
 <meta name="apple-mobile-web-app-capable" content="yes" data-pwa>
-<meta name="description" content="Planeje as cinco árvores de talentos de Graveyard Keeper 2, classifique habilidades e salve suas notas.">
+<meta name="description" content="Planejador gratuito de Graveyard Keeper 2 (PT-BR/EN): 90 habilidades e Tier List interativa. Para jogadores de PC e console, sem mods.">
+<link rel="canonical" href="https://reisdorf-gms.github.io/graveyard-keeper-2/" data-pwa>
+<meta property="og:type" content="website" data-pwa>
+<meta property="og:title" content="Graveyard Keeper 2 — Talent Tree Planner &amp; Tier List | Reisdorf" data-pwa>
+<meta property="og:description" content="Free bilingual talent tree planner. Explore 90 talents, build your tier list, and save your progress. For PC and console players; no mods required." data-pwa>
+<meta property="og:url" content="https://reisdorf-gms.github.io/graveyard-keeper-2/" data-pwa>
+<meta property="og:image" content="https://reisdorf-gms.github.io/graveyard-keeper-2/icon-512.png" data-pwa>
+<meta name="twitter:card" content="summary" data-pwa>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='2' y='2' width='60' height='60' rx='9' fill='%233d281b' stroke='%23edcb69' stroke-width='3'/%3E%3Cpath d='M32 12v15M14 27h36M14 27v12M32 27v12M50 27v12' stroke='%23edcb69' stroke-width='4' fill='none'/%3E%3Cg fill='%23edcb69'%3E%3Crect x='26' y='8' width='12' height='12' rx='2'/%3E%3Crect x='8' y='38' width='12' height='12' rx='2'/%3E%3Crect x='26' y='38' width='12' height='12' rx='2'/%3E%3Crect x='44' y='38' width='12' height='12' rx='2'/%3E%3C/g%3E%3C/svg%3E">
 <style id="offline-fonts">
 /*
@@ -476,6 +483,7 @@ footer{border-top:1px solid var(--line);margin-top:28px;padding-top:18px;color:v
 <strong>Planejador da Árvore de Talentos · v1.0 · Reisdorf</strong><br>
 <span class="game-version">Graveyard Keeper 2 · versão 1.012</span><br>
 <span id="fan-credit">Ferramenta de fã, não oficial. Criado para ajudar no planejamento das habilidades de Graveyard Keeper 2.</span><br>
+<p id="planner-summary">Explore 90 habilidades das cinco árvores, crie sua Tier List e planeje sua progressão. Ferramenta gratuita em português e inglês para jogadores de PC e console, sem mods. Acesse pelo navegador do computador, tablet ou celular.</p>
 <span class="wiki-credit"><span id="wiki-label">Referência de nomenclatura:</span> <a href="https://wikily.gg/graveyard-keeper-2/perk-tree" target="_blank" rel="noopener noreferrer">Wikily — Graveyard Keeper 2</a>.</span>
 <span id="storage-state" class="storage-state" role="status">As alterações são salvas neste navegador quando disponível. Use o disquete para guardar uma cópia do HTML.</span>
 <div class="backup-actions"><button id="export" type="button">Baixar backup (JSON)</button><button id="import" type="button">Restaurar backup</button></div>
@@ -698,10 +706,11 @@ const tr=(pt,en)=>language==="en"?en:pt;
 const definitionFor=k=>(language==="en"?englishDefinitions:definitions)[k];
 function localizeStatic(){
  document.documentElement.lang=tr("pt-BR","en");
- document.title=tr("Graveyard Keeper 2 — Planejador de Talentos | Reisdorf","Graveyard Keeper 2 — Talent Tree Planner | Reisdorf");
- document.querySelector('meta[name="description"]').content=tr("Planeje as cinco árvores de talentos de Graveyard Keeper 2, classifique habilidades e salve suas notas.","Plan the five talent trees in Graveyard Keeper 2, rank perks and save your notes.");
+ document.title=tr("Graveyard Keeper 2 — Planejador de Talentos e Tier List | Reisdorf","Graveyard Keeper 2 — Talent Tree Planner & Tier List | Reisdorf");
+ document.querySelector('meta[name="description"]').content=tr("Planejador gratuito de Graveyard Keeper 2 (PT-BR/EN): 90 habilidades e Tier List interativa. Para jogadores de PC e console, sem mods.","Free Graveyard Keeper 2 talent tree planner (PT-BR/EN). Explore 90 talents and build your tier list. For PC and console players; no mods required.");
  const set=(selector,pt,en)=>{const el=document.querySelector(selector);if(el)el.textContent=tr(pt,en)};
  const attr=(selector,attribute,pt,en)=>{const el=document.querySelector(selector);if(el)el.setAttribute(attribute,tr(pt,en))};
+ set("#planner-summary","Explore 90 habilidades das cinco árvores, crie sua Tier List e planeje sua progressão. Ferramenta gratuita em português e inglês para jogadores de PC e console, sem mods. Acesse pelo navegador do computador, tablet ou celular.","Explore 90 skills across five talent trees, build your tier list, and plan your progression. A free Portuguese and English tool for PC and console players, with no mods required. Use your computer, tablet, or phone browser.");
  set(".title-subtitle","Planejador da Árvore de Talentos","Talent Tree Planner");set(".creator-name","Criado por Reisdorf","Created by Reisdorf");
  document.querySelector("h1").innerHTML=tr('Sua árvore.<br><span>Seu ponto de partida.</span>','Your tree.<br><span>Your starting point.</span>');
  set("#text","Exportar texto","Export text");set("#print","Salvar PDF","Save PDF");set("#tree-view","Árvore de Habilidades","Talent Tree");set("#tier-view","Tier List","Tier List");
