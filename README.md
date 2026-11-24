@@ -5,11 +5,11 @@
 
   **Free interactive talent tree planner and tier list | Planejador gratuito e interativo**
 
-  [**Open the planner / Acessar o planejador**](https://reisdorf-gms.github.io/graveyard-keeper-2/)
+  [**Open the planner / Acessar o planejador**](https://reisdorff.github.io/graveyard-keeper-2/)
 
   PT-BR · EN | Planner v1.1 | Game v1.012
 
-  Created by / Criado por **Reisdorf** · [YouTube @Reisdorf-gms](https://www.youtube.com/@Reisdorf-gms)
+  Created by / Criado por **Reisdorf** · [YouTube @Reisdorff](https://www.youtube.com/@Reisdorff)
 </div>
 
 ---
@@ -31,7 +31,7 @@ This independent browser-based companion is designed for **PC and console player
 
 ### Getting started
 
-1. [Open the planner](https://reisdorf-gms.github.io/graveyard-keeper-2/).
+1. [Open the planner](https://reisdorff.github.io/graveyard-keeper-2/).
 2. Choose a language and a talent tree, then explore the perks.
 3. Assign rankings using the skill cards or the tier list. Add notes if you wish.
 4. Use the disk icon to download your progress as JSON, or the folder icon to restore it. The reset button requires confirmation and preserves notes. The planner itself is available through GitHub Pages.
@@ -55,7 +55,7 @@ A ferramenta é independente do jogo e atende jogadores de **PC e console**. É 
 
 ### Como usar
 
-1. [Acesse o planejador](https://reisdorf-gms.github.io/graveyard-keeper-2/).
+1. [Acesse o planejador](https://reisdorff.github.io/graveyard-keeper-2/).
 2. Escolha o idioma e uma árvore de talentos.
 3. Classifique as habilidades e anote suas prioridades.
 4. Utilize o disquete para baixar seu progresso em JSON ou a pasta para restaurá-lo. A opção de reiniciar solicita confirmação e preserva as notas. O planejador é acessado pelo GitHub Pages.
@@ -64,7 +64,7 @@ A edição pública começa sem classificações para que cada jogador possa con
 
 ## Credits / Créditos
 
-- **Reisdorf** — project creator / criador do projeto: [YouTube](https://www.youtube.com/@Reisdorf-gms).
+- **Reisdorf** — project creator / criador do projeto: [YouTube](https://www.youtube.com/@Reisdorff).
 - [Wikily — Graveyard Keeper 2](https://wikily.gg/graveyard-keeper-2/perk-tree) — talent terminology reference / referência de nomenclatura. Descriptions also reflect Reisdorf's version 1.012 gameplay review.
 - Game names, icons and other original game assets belong to their respective rights holders. / Os nomes, ícones e demais elementos originais do jogo pertencem aos respectivos titulares.
 
